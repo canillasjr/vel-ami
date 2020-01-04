@@ -45,7 +45,12 @@ class Frontend_Controller extends CI_Controller {
 		if(empty($this->session->userdata('user_id'))){
 			redirect('/');
 		}
-		$this->includes->header("Shop");
+		$data['title'] = "Shop Page";
+		$data['profile'] = $this->Administrator_Model->get_profile($this->session->userdata('user_id'));
+		$data['product_list'] = $this->Administrator_Model->all_product();
+		$data['categories'] = $this->Administrator_Model->display_categories();
+		$data['locations'] = $this->Administrator_Model->display_locations();
+		$this->includes->header($data);
 		$this->load->view('shop_page');
 		$this->includes->footer("includes/footer");
 	}

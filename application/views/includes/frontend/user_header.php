@@ -31,6 +31,11 @@
 
   <link href="<?= base_url(); ?>assets/dropzone/dropzone.min.css" rel="stylesheet">
 
+  <?php if($this->router->fetch_method()=='index'): ?>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+  <?php endif;?>
+
 
 </head>
 
