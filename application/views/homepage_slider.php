@@ -2,9 +2,9 @@
   <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
-        <img src="<?php echo base_url();?>assets/frontend/img/slider/slider1.jpg" alt="" title="#slider-direction-1" />
-        <img src="<?php echo base_url();?>assets/frontend/img/slider/slider2.jpg" alt="" title="#slider-direction-2" />
-        <img src="<?php echo base_url();?>assets/frontend/img/slider/slider3.jpg" alt="" title="#slider-direction-3" />
+        <img src="<?php echo base_url();?>assets/images/wall3.jpeg" alt="" title="#slider-direction-1" />
+        <img src="<?php echo base_url();?>assets/images/wall1.jpg" alt="" title="#slider-direction-2" />
+        <img src="<?php echo base_url();?>assets/images/wall2.jpg" alt="" title="#slider-direction-3" />
       </div>
 
       <!-- direction 1 -->

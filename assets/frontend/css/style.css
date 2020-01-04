@@ -1,6 +1,8 @@
+@charset "UTF-8";
 html, body {
   height: 100%;
 }
+
 .floatleft {
   float: left;
 }
@@ -82,6 +84,8 @@ h6 {
 }
 
 a {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   text-decoration: none;
 }
@@ -116,6 +120,8 @@ body {
   border-radius: 2px;
   right: 15px;
   bottom: 15px;
+  -webkit-transition: background 0.5s;
+  -o-transition: background 0.5s;
   transition: background 0.5s;
 }
 
@@ -148,6 +154,7 @@ ul {
 
 input, select, textarea, input[type="text"], input[type="date"], input[type="url"], input[type="email"], input[type="password"], input[type="tel"], button, button[type="submit"] {
   -moz-appearance: none;
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 
@@ -159,7 +166,7 @@ div#preloader {
   width: 100%;
   height: 100%;
   overflow: visible;
-  background: #fff url('../img/preloader.gif') no-repeat center center;
+  background: #fff url("../img/preloader.gif") no-repeat center center;
 }
 
 ::-moz-selection {
@@ -211,21 +218,21 @@ div#preloader {
   margin-bottom: 0;
   padding: 0 0 10px;
   text-transform: uppercase;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
 /*--------------------------------*/
-
 /*  2. Header top Area
-/*--------------------------------*/
-
+  /*--------------------------------*/
 .header-area {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
-  background: rgba(0, 0, 0, 0.40);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 9;
 }
 
@@ -287,7 +294,7 @@ div#preloader {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
 
-.main-menu ul.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+.main-menu ul.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   background: none;
   color: #333;
 }
@@ -299,7 +306,7 @@ div#preloader {
   padding: 25px 0px;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   background-color: transparent;
   color: #fff;
 }
@@ -321,7 +328,7 @@ div#preloader {
   margin-left: 20px;
 }
 
-.top-right.text-right>li {
+.top-right.text-right > li {
   float: right;
   margin: 0px 8px;
 }
@@ -339,12 +346,10 @@ div#preloader {
 }
 
 /*--------------------------------*/
-
 /* 2.1. Stick menu
-/*--------------------------------*/
-
+  /*--------------------------------*/
 .header-area.stick {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: black;
   height: 70px;
   position: fixed;
   top: 0;
@@ -357,11 +362,11 @@ div#preloader {
   height: 90px;
 }
 
-.stick .navbar-brand>img {
+.stick .navbar-brand > img {
   display: none;
 }
 
-.stick .navbar-brand.sticky-logo>img {
+.stick .navbar-brand.sticky-logo > img {
   display: block;
 }
 
@@ -377,6 +382,7 @@ div#preloader {
 .sticky-logo h1 span {
   color: #3ec1d5;
 }
+
 .stick .main-menu ul.navbar-nav li.active > a::after {
   border: 1px solid #fff;
   bottom: 0px;
@@ -386,7 +392,7 @@ div#preloader {
   width: 100%;
 }
 
-.stick .main-menu ul.nav>li>a:hover {
+.stick .main-menu ul.nav > li > a:hover {
   color: #fff;
 }
 
@@ -396,13 +402,13 @@ div#preloader {
   position: relative;
 }
 
-.stick .mainmenu ul#nav>li:hover>a, .stick .mainmenu ul#nav li .mega-menu, .stick .mainmenu ul#nav li ul.sub-menu {
+.stick .mainmenu ul#nav > li:hover > a, .stick .mainmenu ul#nav li .mega-menu, .stick .mainmenu ul#nav li ul.sub-menu {
   background-color: #f5f5f5;
   color: #fff;
   outline: medium none;
 }
 
-.stick .mainmenu ul#nav li:hover ul.sub-menu li a:hover, .mainmenu ul#nav li .mega-menu span>a:hover, .stick .mainmenu ul#nav li .mega-menu-shop a.mega-menu-title:hover {
+.stick .mainmenu ul#nav li:hover ul.sub-menu li a:hover, .mainmenu ul#nav li .mega-menu span > a:hover, .stick .mainmenu ul#nav li .mega-menu-shop a.mega-menu-title:hover {
   color: #fff;
 }
 
@@ -414,7 +420,7 @@ div#preloader {
   margin-top: 0px;
 }
 
-.stick .main-menu ul.nav>li>a {
+.stick .main-menu ul.nav > li > a {
   color: #fff;
   line-height: 22px;
   padding: 24px 0px;
@@ -433,14 +439,13 @@ div#preloader {
 }
 
 /*------------------------------
-  3. About Area
---------------------------------*/
-
+    3. About Area
+  --------------------------------*/
 .about-area {
   background-color: #f9f9f9;
 }
 
-.single-well>a {
+.single-well > a {
   display: block;
 }
 
@@ -461,10 +466,8 @@ div#preloader {
 }
 
 /*--------------------------------*/
-
 /* 4.Services Area
-/*--------------------------------*/
-
+  /*--------------------------------*/
 .services-icon {
   color: #444;
   display: inline-block;
@@ -473,12 +476,14 @@ div#preloader {
   margin-bottom: 20px;
 }
 
-.section-headline.services-head>h2 {
+.section-headline.services-head > h2 {
   margin-bottom: 25px;
 }
 
 .services-details {
   padding-top: 40px;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 
@@ -490,35 +495,34 @@ div#preloader {
   margin-top: 40px;
 }
 
-.section-head>h2 {
+.section-head > h2 {
   color: #333;
 }
 
-.single-services>h4 {
+.single-services > h4 {
   color: #444;
   font-size: 24px;
   font-weight: 500;
 }
 
-.single-services>p {
+.single-services > p {
   color: #333;
   font-size: 14px;
 }
 
 /*----------------------------------------
-  5.Skill Area
-----------------------------------------*/
-
+    5.Skill Area
+  ----------------------------------------*/
 .our-skill-area {
   position: relative;
 }
 
 .our-skill-area {
-  background: rgba(248, 248, 248, 0.8) url("../img/background/bg1.jpg") no-repeat fixed center top / cover;
+  background: rgba(248, 248, 248, 0.8) url("../img/background/bg1.jpg") no-repeat fixed center top/cover;
 }
 
 .test-overly {
-  background: rgba(0, 0, 0, 0.80);
+  background: rgba(0, 0, 0, 0.8);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -530,14 +534,13 @@ div#preloader {
 }
 
 /*----------------------------------------
-  6.Faq Area
-----------------------------------------*/
-
+    6.Faq Area
+  ----------------------------------------*/
 .faq-details .panel-heading {
   padding: 0;
 }
 
-.panel-default>.panel-heading {
+.panel-default > .panel-heading {
   background-color: transparent;
   border: medium none;
   color: #333;
@@ -611,7 +614,7 @@ div#preloader {
   text-transform: capitalize;
 }
 
-.tab-menu .nav-tabs>li>a:hover {
+.tab-menu .nav-tabs > li > a:hover {
   border-color: #eee #eee #ddd;
 }
 
@@ -678,15 +681,16 @@ div#preloader {
   padding: 0;
   position: absolute;
   text-align: left;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   width: 100%;
   padding: 0px 10px;
 }
 
 /*----------------------------------------
- 7.Wellcome Area Css
-----------------------------------------*/
-
+   7.Wellcome Area Css
+  ----------------------------------------*/
 .wellcome-area {
   background: rgba(248, 248, 248, 0.8) url("../img/background/bg1.jpg");
   background-size: cover;
@@ -704,7 +708,7 @@ div#preloader {
   padding: 30px 40px;
 }
 
-.well-text>h2 {
+.well-text > h2 {
   color: #fff;
   font-size: 44px;
   font-weight: 500;
@@ -761,9 +765,8 @@ div#preloader {
 }
 
 /*----------------------------------------
- 8.Team Area Css
-----------------------------------------*/
-
+   8.Team Area Css
+  ----------------------------------------*/
 .team-member {
   background: rgba(0, 0, 0, 0.65) none repeat scroll 0 0;
   display: block;
@@ -788,11 +791,17 @@ div#preloader {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  -webkit-transition: 5s;
+  -o-transition: 5s;
   transition: 5s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
 
 .team-member:hover.team-member::before {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
@@ -831,7 +840,7 @@ div#preloader {
   width: 81%;
 }
 
-.email-news .email_button>button {
+.email-news .email_button > button {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 1px solid #fff;
   color: #fff;
@@ -841,7 +850,7 @@ div#preloader {
   text-align: center;
 }
 
-.email-news .email_button>button:hover {
+.email-news .email_button > button:hover {
   background: #3EC1D5;
   border: 1px solid #fff;
   color: #fff;
@@ -886,17 +895,19 @@ div#preloader {
   position: relative;
 }
 
-.team-img>a {
+.team-img > a {
   display: block;
 }
 
-.team-img>a::after {
-  background: rgba(0, 0, 0, 0.70);
+.team-img > a::after {
+  background: rgba(0, 0, 0, 0.7);
   bottom: 0;
   content: "";
   height: 100%;
   left: 0;
   position: absolute;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   width: 100%;
   opacity: 0;
@@ -908,6 +919,8 @@ div#preloader {
   opacity: 0;
   position: absolute;
   top: 30%;
+  -webkit-transition: 1.3s;
+  -o-transition: 1.3s;
   transition: 1.3s;
 }
 
@@ -937,7 +950,7 @@ div#preloader {
   padding: 10px 0px;
 }
 
-.team-content>h4, .team-content>p {
+.team-content > h4, .team-content > p {
   color: #444;
   margin-bottom: 5px;
 }
@@ -959,10 +972,8 @@ div#preloader {
 }
 
 /*--------------------------------*/
-
 /*  9.review Area
-/*--------------------------------*/
-
+  /*--------------------------------*/
 .reviews-area {
   background: url(../img/background/bg1.jpg);
   overflow: hidden;
@@ -1026,9 +1037,8 @@ div#preloader {
 }
 
 /*----------------------------------------
- 10.Portfolio Area Css
-----------------------------------------*/
-
+   10.Portfolio Area Css
+  ----------------------------------------*/
 .pst-content {
   padding-left: 10px;
 }
@@ -1054,6 +1064,8 @@ div#preloader {
   margin: 0 4px;
   padding: 6px 15px;
   text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
@@ -1088,12 +1100,12 @@ div#preloader {
   position: relative;
 }
 
-.awesome-img>a {
+.awesome-img > a {
   display: block;
   position: relative;
 }
 
-.single-awesome-project:hover .awesome-img>a::after {
+.single-awesome-project:hover .awesome-img > a::after {
   opacity: 1;
 }
 
@@ -1102,7 +1114,7 @@ div#preloader {
   bottom: 0;
 }
 
-.awesome-img>a::after {
+.awesome-img > a::after {
   background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
   content: "";
   height: 100%;
@@ -1111,6 +1123,8 @@ div#preloader {
   top: 0;
   width: 100%;
   opacity: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -1124,6 +1138,8 @@ div#preloader {
   overflow: hidden;
   padding: 10px 15px;
   position: absolute;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   width: 100%;
 }
@@ -1167,6 +1183,8 @@ div#preloader {
   display: block;
   height: 100%;
   text-align: center;
+  -webkit-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
   transition: all 1s ease 0s;
   width: 100%;
 }
@@ -1184,10 +1202,8 @@ div#preloader {
 }
 
 /*----------------------------------------*/
-
 /* 11. Pricing Area
-/*----------------------------------------*/
-
+  /*----------------------------------------*/
 .pricing-area {
   background: rgba(0, 0, 0, 0.02) none repeat scroll 0 0;
 }
@@ -1195,6 +1211,8 @@ div#preloader {
 .pri_table_list {
   border: 1px solid #ccc;
   text-align: center;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   background: #fff;
 }
@@ -1238,17 +1256,21 @@ div#preloader {
   margin-bottom: 25px;
   padding: 10px 35px;
   text-transform: uppercase;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   border-radius: 30px;
 }
 
-.pri_table_list>h3 {
+.pri_table_list > h3 {
   color: #333;
   font-size: 24px;
   font-weight: 700;
   line-height: 25px;
   padding: 30px 0 20px;
   text-transform: uppercase;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
@@ -1259,6 +1281,8 @@ div#preloader {
 }
 
 .pri_table_list.active {
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   position: relative;
   overflow: hidden;
@@ -1281,38 +1305,43 @@ div#preloader {
   -moz-transform: rotate(-45deg);
 }
 
-.pri_table_list>button:hover {
+.pri_table_list > button:hover {
   background-color: #fff;
   border: 1px solid #333;
   color: #333;
 }
 
-.active>h3 {
+.active > h3 {
   background: #f5f5f5 none repeat scroll 0 0;
   color: #333;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
-.active>button {
+.active > button {
   background: #3EC1D5 none repeat scroll 0 0;
   border: 1px solid #3EC1D5;
   color: #fff;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
-.active>button:hover {
+.active > button:hover {
   background: #333 none repeat scroll 0 0;
   border: 1px solid #333;
   color: #fff;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
 /*----------------------------------------
- 12.Testimonial Area Css
-----------------------------------------*/
-
+   12.Testimonial Area Css
+  ----------------------------------------*/
 .testimonials-area {
-  background: rgba(0, 0, 0, 0) url("../img/background/slider1.jpg") no-repeat fixed center top / cover;
+  background: rgba(0, 0, 0, 0) url("../img/background/slider1.jpg") no-repeat fixed center top/cover;
   height: auto;
   width: 100%;
 }
@@ -1355,6 +1384,8 @@ div#preloader {
   height: 80px;
   margin: 0 auto;
   padding: 5px;
+  -webkit-transition: background 0.6s ease-out 0s;
+  -o-transition: background 0.6s ease-out 0s;
   transition: background 0.6s ease-out 0s;
   width: 80px !important;
 }
@@ -1372,7 +1403,7 @@ div#preloader {
   font-size: 20px;
 }
 
-.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot>span {
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot > span {
   background: #fff none repeat scroll 0 0;
   display: inline-block;
   height: 8px;
@@ -1406,7 +1437,7 @@ div#preloader {
   background: #3EC1D5;
 }
 
-.testi-text.text-center>h6 {
+.testi-text.text-center > h6 {
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -1418,16 +1449,14 @@ div#preloader {
   font-size: 16px;
 }
 
-.guest-rev>a {
+.guest-rev > a {
   color: #3EC1D5;
   font-size: 14px;
 }
 
 /*--------------------------------*/
-
 /*  13.Blog Area
-/*--------------------------------*/
-
+  /*--------------------------------*/
 .blog-area {
   height: auto;
   width: 100%;
@@ -1468,6 +1497,8 @@ div#preloader {
   position: absolute;
   right: -20px;
   top: 1px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
@@ -1501,7 +1532,7 @@ div#preloader {
   padding: 10px 0;
 }
 
-.comments-type>a, .date-type, .blog-meta span.comments-type {
+.comments-type > a, .date-type, .blog-meta span.comments-type {
   color: #333;
   letter-spacing: 1px;
   margin-right: 5px;
@@ -1511,7 +1542,7 @@ div#preloader {
   padding-right: 0 !important;
 }
 
-.blog-content-right .comments-type>a, .blog-content-right .date-type, .blog-content-right .blog-meta span.comments-type, .blog-content-right .blog-text p {
+.blog-content-right .comments-type > a, .blog-content-right .date-type, .blog-content-right .blog-meta span.comments-type, .blog-content-right .blog-text p {
   color: #fff;
   letter-spacing: 1px;
 }
@@ -1528,6 +1559,8 @@ div#preloader {
   padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
 }
 
@@ -1537,9 +1570,8 @@ div#preloader {
 }
 
 /*------------------------------
-  13. Quote area
---------------------------------*/
-
+    13. Quote area
+  --------------------------------*/
 .suscribe-area {
   background: #3EC1D5 none repeat scroll 0 0;
   padding: 30px 0;
@@ -1581,10 +1613,8 @@ div#preloader {
 }
 
 /*--------------------------------*/
-
 /*  14.Contact Area
-/*--------------------------------*/
-
+  /*--------------------------------*/
 .contact-area {
   height: auto;
   width: 100%;
@@ -1610,7 +1640,7 @@ div#preloader {
   width: 100%;
 }
 
-.contact-form textarea  {
+.contact-form textarea {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 1px solid #ccc;
   border-radius: 0;
@@ -1629,6 +1659,8 @@ div#preloader {
   margin-top: 8px;
   padding: 12px 30px;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   border-radius: 30px;
 }
@@ -1639,7 +1671,7 @@ div#preloader {
   background: #3EC1D5;
 }
 
-.contact-form  #sendmessage {
+.contact-form #sendmessage {
   color: #3EC1D5;
   border: 1px solid #3EC1D5;
   display: none;
@@ -1696,10 +1728,8 @@ div#preloader {
 }
 
 /*----------------------------------------*/
-
 /*  15. Footer Area
-/*----------------------------------------*/
-
+  /*----------------------------------------*/
 .footer-area {
   padding: 40px 0;
   background: #f9f9f9;
@@ -1751,7 +1781,7 @@ div#preloader {
   border-radius: 50%;
 }
 
-.flicker-img>a {
+.flicker-img > a {
   float: left;
   padding: 1px;
   width: 33.33%;
@@ -1793,6 +1823,8 @@ div#preloader {
   position: relative;
   text-decoration: none;
   text-transform: capitalize;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   width: 70px;
   text-align: center;
@@ -1812,7 +1844,7 @@ div#preloader {
   color: #444;
 }
 
-.copyright>p {
+.copyright > p {
   margin-bottom: 0;
   color: #444;
 }
@@ -1827,10 +1859,8 @@ div#preloader {
 }
 
 /*----------------------------------------*/
-
 /*  16.Home Page 2  CSS
-/*----------------------------------------*/
-
+  /*----------------------------------------*/
 .header-bg {
   background: url(../img/slider/slider1.jpg);
   background-repeat: no-repeat;
@@ -1846,7 +1876,7 @@ div#preloader {
 }
 
 .home-overly {
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
   position: absolute;
   width: 100%;
@@ -1857,10 +1887,8 @@ div#preloader {
 }
 
 /*----------------------------------------*/
-
 /*  17.Home Page 3  CSS
-/*----------------------------------------*/
-
+  /*----------------------------------------*/
 .home-video {
   height: 100%;
   left: 0;
@@ -1890,9 +1918,8 @@ div#preloader {
 }
 
 /*----------------------------------------
-  18. Blog page
-----------------------------------------*/
-
+    18. Blog page
+  ----------------------------------------*/
 .page-area {
   position: relative;
 }
@@ -1946,8 +1973,6 @@ div#preloader {
   display: block;
 }
 
-.left-blog ul li a:hover {}
-
 .left-blog ul li a {
   color: #444;
   display: block;
@@ -1975,6 +2000,8 @@ div#preloader {
   padding: 12px 40px;
   text-align: center;
   text-transform: uppercase;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   z-index: 222;
 }
@@ -2050,10 +2077,8 @@ div#preloader {
 }
 
 /*----------------------------------------*/
-
 /*  19.	Blog Details css
-/*----------------------------------------*/
-
+  /*----------------------------------------*/
 .post-information h2 {
   color: #363636;
   font-size: 22px;
@@ -2083,11 +2108,11 @@ div#preloader {
   padding: 0 10px;
 }
 
-.entry-content>p {
+.entry-content > p {
   color: #444;
 }
 
-.entry-meta>span {
+.entry-meta > span {
   color: #444;
 }
 
@@ -2100,7 +2125,7 @@ div#preloader {
   padding: 22px 20px;
 }
 
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   background-color: #3EC1D5;
   border-color: #3EC1D5;
   color: #fff;
@@ -2115,7 +2140,7 @@ div#preloader {
   margin: 30px 0;
 }
 
-.social-sharing>h3 {
+.social-sharing > h3 {
   display: inline-block;
   font-size: 18px;
   margin: 0;
@@ -2214,13 +2239,11 @@ div#preloader {
 }
 
 .comments-content-wrap span b {
-  margin-right: 5px
+  margin-right: 5px;
 }
 
-.comments-content-wrap span a:hover {}
-
 span.post-time {
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .comments-content-wrap p {
@@ -2231,14 +2254,12 @@ span.post-time {
 }
 
 li.threaded-comments {
-  margin-left: 50px
+  margin-left: 50px;
 }
 
 .comment-respond {
   margin-top: 60px;
 }
-
-h3.comment-reply-title {}
 
 span.email-notes {
   color: #42414f;
@@ -2274,6 +2295,7 @@ span.email-notes {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 1px solid #3ec1d5;
   border-radius: 20px;
+  -webkit-box-shadow: none;
   box-shadow: none;
   color: #444;
   display: inline-block;
@@ -2285,6 +2307,8 @@ span.email-notes {
   padding: 10px 15px;
   text-shadow: none;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   white-space: nowrap;
 }
@@ -2309,6 +2333,13 @@ span.email-notes {
   padding-top: 30px;
 }
 
-/*----------------------------------------
- .End CSS
-----------------------------------------*/
+/*Product SLider*/
+.single-blog {
+  border: 1px solid #dccaca8f;
+  padding: 3px;
+}
+
+.single-blog:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

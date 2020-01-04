@@ -31,6 +31,7 @@
 
   <link href="<?= base_url(); ?>assets/dropzone/dropzone.min.css" rel="stylesheet">
 
+
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example" base-url="<?= base_url() ?>">

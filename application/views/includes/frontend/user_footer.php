@@ -127,3 +127,7 @@ jQuery(document).ready(function () {
     
 })
   </script>
+
+  <?php if($this->router->fetch_method()=='index'): ?>
+  <!-- <script type="text/javascript" src="<?php base_url(); ?>assets/frontend/js/productslider.js"></script> -->
+  <?php endif;?>

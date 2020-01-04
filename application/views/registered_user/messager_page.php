@@ -7,15 +7,18 @@
             <div class="single-blog-page">
               <!-- search option start -->
               <form action="#">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#selectLocation"><i class="fa fa-map-marker" aria-hidden="true" ></i> Select Location</button>
-                <br/><br/>
+               
                 <div class="search-option">
 
-                  <input type="text" placeholder="What are you looking for?...">
-                  <button class="button" type="submit">
-                    <i class="fa fa-search"></i>
-
-                  </button>
+                <div class="input-group">
+                  <input type="text" class="form-control" aria-label="..." placeholder="Search Product?">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#selectLocation">
+                      <i class="fa fa-map-marker" aria-hidden="true" ></i>
+                    </button>
+                  </div>
+                </div>
 
                 </div>
 

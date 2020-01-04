@@ -1,25 +1,23 @@
 <?php foreach ($product_list as $product): ?>
 <div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
+            <a href="<?php echo base_url('shop'); ?>">
+            <!-- shop should go to permalink by shopname
+                url example: vel-ami.com/shop/felmeraldshop
+            -->
+              <div class="single-blog">
                 <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
+                      <img src="<?php echo base_url();?>assets/images/nit1.png" alt="">
                 </div>
                 <center>
                 <div class="blog-text">
                   <h4>
                       <a href="<?php echo base_url('shop'); ?>">SHOP NAME</a>
                     </h4>
-                  <p> Product Name </p>
+                  <p> <?php echo $product->product_name;  ?> </p>
                   <p class="text-danger">₱ 299.00</p>
                 </div>
                 </center>
               </div>
+            </a>  
 </div>
 <?php endforeach ?>

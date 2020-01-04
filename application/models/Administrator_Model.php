@@ -124,7 +124,7 @@ class Administrator_Model extends CI_Model{
     }
 
     public function all_product(){
-        return $this->db->get('vel_ami_products')->result();
+        return $this->db->order_by('created_date','DESC')->get('vel_ami_products')->result();
     }
   
 }
