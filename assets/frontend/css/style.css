@@ -2343,3 +2343,35 @@ span.email-notes {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+.single-blog .blog-text a.productlink {
+  font-size: 18px;
+}
+
+.single-blog .blog-text p.font21 {
+  font-size: 21px;
+}
+
+.product-gallery-slider img.img-responsive-product {
+  width: 100%;
+  background: #999999;
+}
+
+.lSSlideOuter .lSPager.lSGallery img:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.product-info {
+  margin-top: 50px;
+}
+
+.product-info h2.product-title {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.product-info p.price {
+  color: #f57224;
+  font-size: 21px;
+}

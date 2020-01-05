@@ -40,7 +40,7 @@
 
             <!-- select product -->
            
-            <?php $this->load->view('owner_shop_page'); ?>
+            <?php $this->load->view('registered_user/product_page_content'); ?>
 
 
            

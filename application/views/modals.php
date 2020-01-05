@@ -215,3 +215,51 @@
     </div>
   </div>
 </div>
+
+
+<!-- SEND MESSAGE TO PRODUCT -->
+<div class="modal fade" id="productsendmessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         January 5 2019
+         <h6><span class="glyphicon glyphicon-earphone"></span> <a href="tel:+63972114460">+63972114460</a></h6>
+         <!-- display of costumer contact number -->
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group pull-left">
+            <h6 class="text-right">firtname lastname</h6>
+            <div class="alert alert-warning" role="alert">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              <img src="<?php echo base_url();?>assets/frontend/img/profile.jpg" class="vel-profile">
+              <span class="online pull-right"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-group pull-right">
+            <h6 class="text-left">Shopname</h6>
+            <div class="alert alert-success" role="alert">
+            <img src="<?php echo base_url();?>assets/frontend/img/profile.jpg" class="vel-profile">
+            <span class="away pull-left"></span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Type here..">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="fa fa-camera"></i></button>
+            <button class="btn btn-default" type="button">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

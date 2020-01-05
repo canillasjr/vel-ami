@@ -13,123 +13,25 @@
 <div class="col-sm-12"><br/><br/></div>
 
 <!-- product -->
-<div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
+<div class="col-sm-6">
+              <div class="single-blog">
                 <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
+                  <a class="productlink" href="<?php echo base_url('product_permalink'); ?>" data-toggle="tooltip" data-placement="top" title="Click to view product">
+                        <img src="<?php echo base_url();?>assets/images/nit2.png" alt="">
+                  </a>
                 </div>
                 <center>
-	                <div class="blog-text">
-	                  <p> Cottons Handkerchiefs </p>
-	                  <p class="text-danger">₱ 299.00</p>
+                  <div class="blog-text" style="padding-top:15px;">
+                  <!-- 
+                    product permalink should be product Id in the url para unique like wordpress
+                    example: vel-ami.com/shop/product_permalink/product_DI
+                    live example: vel-ami.com/shop/product_permalink/1234
+                   -->
+	                  <a class="productlink" href="<?php echo base_url('product_permalink'); ?>" data-toggle="tooltip" data-placement="top" title="Click to view product">Product Name</a>
+	                  <p class="text-danger font21">₱ 299.00</p>
 	                </div>
                 </center>
               </div>
 </div>
-<div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
-                <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
-                </div>
-                <center>
-	                <div class="blog-text">
-	                  <p> Cottons Handkerchiefs </p>
-	                  <p class="text-danger">₱ 299.00</p>
-	                </div>
-                </center>
-              </div>
-</div>
-<div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
-                <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
-                </div>
-                <center>
-	                <div class="blog-text">
-	                  <p> Cottons Handkerchiefs </p>
-	                  <p class="text-danger">₱ 299.00</p>
-	                </div>
-                </center>
-              </div>
-</div>
-<div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
-                <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
-                </div>
-                <center>
-	                <div class="blog-text">
-	                  <p> Cottons Handkerchiefs </p>
-	                  <p class="text-danger">₱ 299.00</p>
-	                </div>
-                </center>
-              </div>
-</div>
-<div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
-                <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
-                </div>
-                <center>
-	                <div class="blog-text">
-	                  <p> Cottons Handkerchiefs </p>
-	                  <p class="text-danger">₱ 299.00</p>
-	                </div>
-                </center>
-              </div>
-</div>
-<div class="col-sm-4">
-              <div class="single-blog" style="border:1px solid #dccaca8f;padding:3px;">
-                <div class="single-blog-img">
-                  <a href="blog-details.html">
-                      <img src="<?php echo base_url();?>assets/frontend/img/blog/1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="blog-meta">
-                  <span class="date-type">
-                      <center><i class="fa fa-calendar"></i>2016-03-05 / 09:10:16</center>
-                    </span>
-                </div>
-                <center>
-	                <div class="blog-text">
-	                  <p> Cottons Handkerchiefs </p>
-	                  <p class="text-danger">₱ 299.00</p>
-	                </div>
-                </center>
-              </div>
-</div>
+
+

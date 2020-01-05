@@ -1,8 +1,4 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <!-- Favicons -->
-  <link href="<?php echo base_url();?>assets/frontend/img/favicon.png" rel="icon">
-  <link href="<?php echo base_url();?>assets/frontend/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
 
@@ -31,11 +27,15 @@
 
   <link href="<?= base_url(); ?>assets/dropzone/dropzone.min.css" rel="stylesheet">
 
-  <?php if($this->router->fetch_method()=='index'): ?>
+  <?php if($this->router->fetch_method()=='index' || $this->router->fetch_method()=='getshopname'): ?>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-  <?php endif;?>
-
+  <?php endif;
+   if($this->router->fetch_method() == 'product_permalink'):
+  ?>
+  <!-- Product SLider -->
+  <link rel="stylesheet" type="text/css" href="https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css"/>
+  <?php endif; ?>
 
 </head>
 

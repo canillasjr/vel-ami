@@ -58,6 +58,7 @@ $route['dashboard/myshop'] = 'Frontend_Controller/get_myshop';
 $route['dashboard/profile'] = 'Frontend_Controller/get_profile';
 $route['dashboard/myshop/add_products'] = 'Frontend_Controller/get_add_products';
 $route['ajax_file_upload_handler'] = 'Frontend_Controller/ajax_file_upload_handler';
+$route['product_permalink'] = 'Frontend_Controller/product_permalink';
 
 // Administrator route
 

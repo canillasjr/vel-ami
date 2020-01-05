@@ -51,15 +51,33 @@ class Frontend_Controller extends CI_Controller {
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
 		$this->includes->header($data);
-		$this->load->view('shop_page');
+		$this->load->view('shop_page',$data);
+		$this->includes->footer("includes/footer");
+	}
+	public function product_permalink(){
+		if(empty($this->session->userdata('user_id'))){
+			redirect('/');
+		}
+		$data['title'] = "Product Page";
+		$data['profile'] = $this->Administrator_Model->get_profile($this->session->userdata('user_id'));
+		$data['product_list'] = $this->Administrator_Model->all_product();
+		$data['categories'] = $this->Administrator_Model->display_categories();
+		$data['locations'] = $this->Administrator_Model->display_locations();
+		$this->includes->header($data);
+		$this->load->view('registered_user/product_permalink_page',$data);
 		$this->includes->footer("includes/footer");
 	}
 	public function get_message(){
 		if(empty($this->session->userdata('user_id'))){
 			redirect('/');
 		}
-		$this->includes->header("Shop");
-		$this->load->view('registered_user/messager_page');
+		$data['title'] = "Messenger";
+		$data['profile'] = $this->Administrator_Model->get_profile($this->session->userdata('user_id'));
+		$data['product_list'] = $this->Administrator_Model->all_product();
+		$data['categories'] = $this->Administrator_Model->display_categories();
+		$data['locations'] = $this->Administrator_Model->display_locations();
+		$this->includes->header($data);
+		$this->load->view('registered_user/messager_page',$data);
 		$this->includes->footer("includes/footer");
 	}
 	public function get_myshop()

@@ -115,26 +115,47 @@ jQuery(document).ready(function () {
                     formData.append(el.name, el.value);
                 });
             });
-
-
-            
-
           }
-    });
-
-
-
-    
+    });    
 })
   </script>
 
-  <?php if($this->router->fetch_method()=='index'): ?>
-  <!-- <script type="text/javascript" src="<?php base_url(); ?>assets/frontend/js/productslider.js"></script> -->
+  <?php if($this->router->fetch_method()=='index' || $this->router->fetch_method()=='getshopname'): ?>
+    <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script type="text/javascript" src="<?php base_url(); ?>assets/frontend/js/productslider.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   $( function() {
     $( document ).tooltip();
   } );
   </script>
-
+  <?php endif;
+    if($this->router->fetch_method()=='product_permalink'):
+  ?>
+  <!-- product slider  documentation: http://sachinchoolur.github.io/lightslider/-->
+  <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
+  <script type="text/javascript">
+    $('#lightSlider').lightSlider({
+      gallery: true,
+      item: 1,
+      loop:true,
+      slideMargin: 0,
+      thumbItem: 10,
+      cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+      easing: 'linear', //'for jquery animation',////
+      enableTouch:true,
+      enableDrag:true,
+      freeMove:true,
+      swipeThreshold: 40,
+      responsive : [],
+ 
+        onBeforeStart: function (el) {},
+        onSliderLoad: function (el) {},
+        onBeforeSlide: function (el) {},
+        onAfterSlide: function (el) {},
+        onBeforeNextSlide: function (el) {},
+        onBeforePrevSlide: function (el) {}
+  });
+  </script>
   <?php endif;?>
+  
