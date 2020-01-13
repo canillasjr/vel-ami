@@ -6,6 +6,7 @@ class Administrator_Model extends CI_Model{
     public function __construct(){
         parent::__construct();
         $this->load->database();
+        
     }
 
   	public function create_account($data){
@@ -140,6 +141,15 @@ class Administrator_Model extends CI_Model{
             return TRUE;
         }else{
             return FALSE;
+        }
+    }
+
+    public function get_all_slider_data(){
+        $select_data = $this->Crud_Model->select_all(['id','admin_id','title','info','image'],['vel_ami_homepagesliders']);
+        if($select_data){
+            return $select_data;
+        }else{
+            return;
         }
     }
   
