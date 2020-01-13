@@ -301,29 +301,31 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
+        <?php echo form_open_multipart(base_url('Administrator_Controller/upload_slider')); ?>
         <div class="modal-body">
           <div class="form-group">
               <label>Image</label>
               <div class="input-group mb-3">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile01">
-                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  <input type="file" name="userfile" required >
+                  
                 </div>
               </div>
           </div>
           <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" placeholder="Title">
+            <input type="text" name="title" class="form-control" placeholder="Title" required>
           </div>
           <div class="form-group">
             <label>Description</label>
-            <textarea class="form-control" placeholder="Write descption.."></textarea>
+            <textarea class="form-control" name="info" placeholder="Write descption.." required></textarea>
           </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="#">CREATE</a>
+          <input type="submit" class="btn btn-primary" value="CREATE"/>
         </div>
+        <?php echo form_close();?>
       </div>
     </div>
   </div>

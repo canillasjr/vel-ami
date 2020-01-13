@@ -126,5 +126,21 @@ class Administrator_Model extends CI_Model{
     public function all_product(){
         return $this->db->order_by('created_date','DESC')->get('vel_ami_products')->result();
     }
+
+    public function add_upload_slider($admin_id,$image,$title,$info){
+        $sql = $this->Crud_Model->insert_data(
+            array(
+                'admin_id'  => $admin_id,
+                'title'     => $title,
+                'info'      => $info,
+                'image'     => $image
+            ),"vel_ami_homepagesliders"
+        );
+        if($sql){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
   
 }

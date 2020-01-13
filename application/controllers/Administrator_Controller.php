@@ -6,6 +6,9 @@ class Administrator_Controller extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model(array(
+			'Crud_Model'
+			));
 		$this->load->library(array(
 			"Includes","session"
 			));
@@ -271,6 +274,16 @@ class Administrator_Controller extends CI_Controller {
 	public function logout(){
 		$this->session->sess_destroy();
         redirect(base_url('administrator/login'));
+	}
+
+	public function upload_slider(){
+		$admin_id = $this->session->userdata('admin_id');
+		$image = do_upload();
+		$title = $this->input->post('title');
+		$info = $this->input->post('info');
+		$this->Administrator_Model->add_upload_slider($admin_id,$image,$title,$info);
+		redirect(base_url('administrator/sliders'));
+		exit();
 	}
 
 
