@@ -6,14 +6,14 @@
             
               <div class="single-blog">
                 <div class="single-blog-img">
-                <a href="<?php echo base_url('shop'); ?>" data-toggle="tooltip" data-placement="top" title="Registered users can view shop products" >
+                <a href="<?php echo base_url('shop'); ?>/<?php echo $product->shop_name;  ?>" data-toggle="tooltip" data-placement="top" title="Registered users can view shop products" >
                       <img src="<?php echo base_url();?>assets/images/nit1.png" alt="">
                 </a>
                 </div>
-                <center>
+                <center>  
                 <div class="blog-text">
                   <h4>
-                      <a href="<?php echo base_url('shop'); ?>" data-toggle="tooltip" data-placement="top" title="Registered users can view shop products" >SHOP NAME</a>
+                      <a href="<?php echo base_url('shop'); ?>/<?php echo $product->shop_name;  ?>" data-toggle="tooltip" data-placement="top" title="Registered users can view shop products" > <?php echo $product->shop_name;  ?></a>
                     </h4>
                   <p> <?php echo $product->product_name;  ?> </p>
                   <p class="text-danger">₱ 299.00</p>

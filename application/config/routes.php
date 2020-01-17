@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Frontend_Controller';
 $route['index'] ='Frontend_Controller/index';
 $route['search_result'] = 'Frontend_Controller/search_result_by_location';
-$route['shop'] = 'Frontend_Controller/getshopname';
+$route['shop/(:any)'] = 'Frontend_Controller/getshopname/$1';
 $route['dashboard/message'] ='Frontend_Controller/get_message';
 $route['dashboard/myshop'] = 'Frontend_Controller/get_myshop';
 $route['dashboard/profile'] = 'Frontend_Controller/get_profile';
@@ -100,3 +100,5 @@ $route['dashboard/create_shop'] = 'Frontend_Controller/create_shop';
 $route['dashboard/upload_shop_image'] = 'Frontend_Controller/upload_shop_image';
 
 $route['dashboard/logout'] = 'Frontend_Controller/logout';
+
+$route['category/(:any)/(:num)'] = 'Frontend_Controller/category_page/$1/$2';

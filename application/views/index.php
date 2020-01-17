@@ -28,7 +28,7 @@
               <!-- search option end -->
             </div>
             <!-- includes category navigation menu -->
-              <?php $this->load->view('category_sidenav',$categories); ?>
+              <?php $this->load->view('category_sidenav',$categories,$current_id); ?>
             <!-- includes advestisement -->
               <?php $this->load->view('advertisement_nav');?>
           </div>

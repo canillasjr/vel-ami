@@ -29,9 +29,10 @@ class Frontend_Controller extends CI_Controller {
 	{
 		$data['title'] = "Vil ami";
 		$data['profile'] = $this->Administrator_Model->get_profile($this->session->userdata('user_id'));
-		$data['product_list'] = $this->Administrator_Model->all_product();
+		$data['product_list'] = $this->Administrator_Model->display_shops();
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
+		$data['current_id'] = 0;
 		$this->includes->header($data);
 		$this->load->view('index',$data);
 		$this->includes->footer("includes/footer",$data);
@@ -41,13 +42,13 @@ class Frontend_Controller extends CI_Controller {
 		$this->load->view('search_result');
 		$this->includes->footer("includes/footer");
 	}
-	public function getshopname(){
-		if(empty($this->session->userdata('user_id'))){
-			redirect('/');
-		}
-		$data['title'] = "Shop Page";
+	public function getshopname($shopname){
+		$data['title'] = $shopname;
 		$data['profile'] = $this->Administrator_Model->get_profile($this->session->userdata('user_id'));
-		$data['product_list'] = $this->Administrator_Model->all_product();
+		$data['shop_info'] = $this->Administrator_Model->get_shopinfo($shopname);
+		$shop_uid = $this->Administrator_Model->get_shopId($shopname);
+		$data['product_list'] = $this->Administrator_Model->product_list($shop_uid);
+		$data['current_id'] = 0;
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
 		$this->includes->header($data);
@@ -63,6 +64,7 @@ class Frontend_Controller extends CI_Controller {
 		$data['product_list'] = $this->Administrator_Model->all_product();
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
+		$data['current_id'] = 0;
 		$this->includes->header($data);
 		$this->load->view('registered_user/product_permalink_page',$data);
 		$this->includes->footer("includes/footer");
@@ -76,6 +78,7 @@ class Frontend_Controller extends CI_Controller {
 		$data['product_list'] = $this->Administrator_Model->all_product();
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
+		$data['current_id'] = 0;
 		$this->includes->header($data);
 		$this->load->view('registered_user/messager_page',$data);
 		$this->includes->footer("includes/footer");
@@ -92,6 +95,7 @@ class Frontend_Controller extends CI_Controller {
 		$shop = $this->Administrator_Model->get_shopname($user_id);
 		$data['shopname'] = $shop->result();
 		$data['categories'] = $this->Administrator_Model->display_categories();
+		$data['current_id'] = 0;
 		$data['locations'] = $this->Administrator_Model->display_locations();
 		$data['product_list'] = $this->Administrator_Model->product_list($user_id);
 	
@@ -114,7 +118,7 @@ class Frontend_Controller extends CI_Controller {
 		$data['shopname'] = $shop->result();
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
-	
+		$data['current_id'] = 0;
 		$this->includes->header($data);
 		$this->load->view('registered_user/add_products',$data);
 		// $this->load->view('registered_user/modal/product-images-modal');
@@ -130,6 +134,7 @@ class Frontend_Controller extends CI_Controller {
 		$data['profile'] = $this->Administrator_Model->get_profile($user_id);
 		$data['categories'] = $this->Administrator_Model->display_categories();
 		$data['locations'] = $this->Administrator_Model->display_locations();
+		$data['current_id'] = 0;
 		$this->includes->header($data);
 		$this->load->view('registered_user/profile_page');
 		$this->includes->footer("includes/footer");
@@ -287,4 +292,18 @@ class Frontend_Controller extends CI_Controller {
 		echo $category;
 	}
 
+	public function category_page($name,$id){
+
+		$data['title'] = "Vil ami";
+		$data['profile'] = $this->Administrator_Model->get_profile($this->session->userdata('user_id'));
+		$data['product_list'] = $this->Administrator_Model->display_shop_by_category($id);
+		$data['categories'] = $this->Administrator_Model->display_categories();
+		$data['locations'] = $this->Administrator_Model->display_locations();
+		$data['current_id'] = $id;
+		$this->includes->header($data);
+		$this->load->view('index',$data);
+		$this->includes->footer("includes/footer",$data);
+	}
+
 }
+

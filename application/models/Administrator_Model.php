@@ -103,10 +103,23 @@ class Administrator_Model extends CI_Model{
     }
 
     public function shop_image($data,$user_id){
-        $this->db->where('id',$user_id);
+        $this->db->where('user_id',$user_id);
         $this->db->update('vel_ami_shops',$data);
         return true;
     }
+
+
+    public function get_shopinfo($shopname){
+        $this->db->where('shop_name',$shopname);
+         $query = $this->db->get('vel_ami_shops');
+         return $query->result();
+    }
+
+    public function get_shopId($shopname){
+             $this->db->where('shop_name',$shopname);
+         $query = $this->db->get('vel_ami_shops');
+         return $query->result()[0]->user_id;
+        }
 
     public function get_profile($user_id){
         $this->db->where('id',$user_id);
@@ -125,6 +138,69 @@ class Administrator_Model extends CI_Model{
 
     public function all_product(){
         return $this->db->order_by('created_date','DESC')->get('vel_ami_products')->result();
+    }
+
+    public function display_shops(){
+
+          $query = "
+                    SELECT 
+                        vel_ami_products.product_name,
+                        vel_ami_products.price,
+                        vel_ami_products.description,
+                        vel_ami_products.tags,
+                        vel_ami_products.id as product_id,
+                        vel_ami_products.user_id as prod_uid,
+                        vel_ami_products.created_date, 
+                    (SELECT 
+                        vel_ami_shops.shop_name
+                    FROM
+                        vel_ami_shops
+                    WHERE 
+                        vel_ami_shops.user_id = vel_ami_products.user_id)
+
+                    as shop_name
+                    
+                    FROM
+                        vel_ami_products
+                ";
+
+        return $this->db->query($query)->result();
+    }
+
+     public function display_shop_by_category($id){
+
+          $query = "
+                    SELECT 
+                        vel_ami_products.product_name,
+                        vel_ami_products.price,
+                        vel_ami_products.description,
+                        vel_ami_products.tags,
+                        vel_ami_products.id as product_id,
+                        vel_ami_products.user_id as prod_uid,
+                        vel_ami_products.created_date, 
+                    (SELECT 
+                        vel_ami_shops.shop_name
+                    FROM
+                        vel_ami_shops
+                    WHERE 
+                        vel_ami_shops.user_id = vel_ami_products.user_id)
+
+                    as shop_name
+                    
+                    FROM
+                        vel_ami_products
+
+                    WHERE
+                        vel_ami_products.category = $id
+
+                ";
+
+        return $this->db->query($query)->result();
+    }
+
+    public function product_list_shop($user_id){
+        $this->db->where('user_id',$user_id);
+        return $this->db->get('vel_ami_products')->result();
     }
   
 }
