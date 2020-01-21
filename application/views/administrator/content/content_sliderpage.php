@@ -26,26 +26,25 @@
                     </tr>
                   </tfoot>
                   <tbody>
+                  <?php if(!empty($get_all)): foreach($get_all as $row): ?>
                     <tr>
                       <td>
-                        <img class="img-responsive" src="<?php echo base_url();?>assets/frontend/img/profile.jpg" style="height:100px;width:100px">
+                        <img class="img-responsive" src="<?php echo base_url();?>uploads/sliders/<?php echo $row->image; ?>" style="height:100px;width:100px">
                       </td>
+                      <td><?php echo $row->title; ?></td>
+                       <td><?php echo $row->info;?></td>
                       <td>
-                      LOREM IPSUME, TITLE
-                      </td>
-                       <td>
-                      LOREM IPSUME DESCRIPTION LOREM IPSUME DESCRIPTION
-                      </td>
-                      <td>
-                        <a href="#" class="btn btn-danger btn-circle btn-sm" data-toggle="modal" data-target="#deleteslider">
+                        <a href="#" class="btn btn-danger btn-circle btn-sm" data-toggle="modal" data-target="#deleteslider<?php echo $row->id; ?>">
                           <i class="fas fa-trash"></i>
                         </a>
-                         <a href="#" class="btn btn-warning btn-circle btn-sm" data-toggle="modal" data-target="#editslider">
+                         <a href="#" class="btn btn-warning btn-circle btn-sm" data-toggle="modal" data-target="#editslider<?php echo $row->id; ?>">
                           <i class="fas fa-edit"></i>
                         </a>
                       </td>
                       
                     </tr>
+                  <?php endforeach; endif;?>
+
                  
                   </tbody>
                 </table>

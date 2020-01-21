@@ -6,6 +6,7 @@ class Administrator_Model extends CI_Model{
     public function __construct(){
         parent::__construct();
         $this->load->database();
+        
     }
 
   	public function create_account($data){
@@ -125,6 +126,66 @@ class Administrator_Model extends CI_Model{
 
     public function all_product(){
         return $this->db->order_by('created_date','DESC')->get('vel_ami_products')->result();
+    }
+
+    public function add_upload_slider($admin_id,$image,$title,$info){
+        $sql = $this->Crud_Model->insert_data(
+            array(
+                'admin_id'  => $admin_id,
+                'title'     => $title,
+                'info'      => $info,
+                'image'     => $image
+            ),"vel_ami_homepagesliders"
+        );
+        if($sql){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function get_all_slider_data(){
+        $select_data = $this->Crud_Model->select_all(['id','admin_id','title','info','image'],['vel_ami_homepagesliders']);
+        if($select_data){
+            return $select_data;
+        }else{
+            return;
+        }
+    }
+    public function update_slider($image,$update_id,$title,$info){
+        if(!empty($image)){
+            $update_query = $this->Crud_Model->update_data(
+                array(
+                    'image' => $image,
+                    'title' =>  $title,
+                    'info'  =>  $info
+                ),
+                array(
+                    'id'    =>  $update_id
+                ),
+                "vel_ami_homepagesliders"
+            );
+        }else{
+            $update_query = $this->Crud_Model->update_data(
+                array(
+                    'title' =>  $title,
+                    'info'  =>  $info
+                ),
+                array(
+                    'id'    =>  $update_id
+                ),
+                "vel_ami_homepagesliders"
+            );
+        }
+             if($update_query){
+                return TRUE;
+                }else{
+                return FALSE;
+             }
+    }
+
+    public function delete_slider($id){
+        return $this->Crud_Model->delete_data(['id'=>$id],"vel_ami_homepagesliders");
     }
   
 }

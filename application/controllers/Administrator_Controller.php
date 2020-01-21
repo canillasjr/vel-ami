@@ -6,6 +6,9 @@ class Administrator_Controller extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model(array(
+			'Crud_Model'
+			));
 		$this->load->library(array(
 			"Includes","session"
 			));
@@ -77,8 +80,11 @@ class Administrator_Controller extends CI_Controller {
 		if(empty($this->session->userdata('admin_id'))){
 			redirect(base_url('administrator/login'));
 		}
+		$data = array(
+			'get_all' => $this->Administrator_Model->get_all_slider_data()
+		);
 		$this->includes->header("Sliders");
-		$this->load->view('administrator/sliderpage_page');
+		$this->load->view('administrator/sliderpage_page',$data);
 		$this->includes->footer("includes/footer");
 	}
 	public function admin_profile_page(){
@@ -271,6 +277,39 @@ class Administrator_Controller extends CI_Controller {
 	public function logout(){
 		$this->session->sess_destroy();
         redirect(base_url('administrator/login'));
+	}
+	/**
+	*@param upload_slider
+	*Upload slider using upload_helper
+	*Created By: Felmerald
+	*/ 
+	public function upload_slider(){
+		$admin_id = $this->session->userdata('admin_id');
+		$image = do_upload();
+		$data = $this->input->post(NULL, TRUE); //xss_clean
+		$this->Administrator_Model->add_upload_slider($admin_id,$image,$data['title'],$data['info']);
+		$this->session->set_flashdata(array('success_slider' => 'Success!'));
+		redirect(base_url('administrator/sliders'));
+		exit();
+	}
+	public function update_slider(){
+		$image = do_upload();
+		$data = $this->input->post(NULL, TRUE); //xss_clean
+		$this->Administrator_Model->update_slider($image,
+			$data['update_id'],
+			$data['title'],
+			$data['info']
+		);
+		$this->session->set_flashdata(array('success_slider' => 'Success!'));
+		redirect(base_url('administrator/sliders'));
+		exit();
+	}
+	public function delete_slider(){
+		$id = $this->input->get('id');
+		$this->Administrator_Model->delete_slider($id);
+		$this->session->set_flashdata(array('success_slider' => 'Success!'));
+		redirect(base_url('administrator/sliders'));
+		exit();
 	}
 
 

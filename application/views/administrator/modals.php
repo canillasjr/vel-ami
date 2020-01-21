@@ -301,34 +301,36 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
+        <?php echo form_open_multipart(base_url('Administrator_Controller/upload_slider')); ?>
         <div class="modal-body">
           <div class="form-group">
               <label>Image</label>
               <div class="input-group mb-3">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile01">
-                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  <input type="file" name="userfile" required >
+                  
                 </div>
               </div>
           </div>
           <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" placeholder="Title">
+            <input type="text" name="title" class="form-control" placeholder="Title" required>
           </div>
           <div class="form-group">
             <label>Description</label>
-            <textarea class="form-control" placeholder="Write descption.."></textarea>
+            <textarea class="form-control" name="info" placeholder="Write descption.." required></textarea>
           </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="#">CREATE</a>
+          <input type="submit" class="btn btn-primary" value="CREATE"/>
         </div>
+        <?php echo form_close();?>
       </div>
     </div>
   </div>
-
-    <div class="modal fade" id="editslider" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <?php if(!empty($get_all)): foreach($get_all as $row): ?>
+    <div class="modal fade" id="editslider<?php echo $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -338,34 +340,39 @@
           </button>
         </div>
         <div class="modal-body">
+        <?php echo form_open_multipart(base_url().'Administrator_Controller/update_slider'); ?>
+        <input type="hidden" name="update_id" value="<?php echo $row->id; ?>">
           <div class="form-group">
-              <label>Image</label>
+              <label>Change Image</label>
               <div class="input-group mb-3">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile01">
-                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  <input type="file" name="userfile">
                 </div>
               </div>
           </div>
           <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" placeholder="Title">
+            <input type="text" class="form-control" name="title" value="<?php echo $row->title; ?>">
           </div>
           <div class="form-group">
             <label>Description</label>
-            <textarea class="form-control" placeholder="Write descption.."></textarea>
+  
+            <textarea class="form-control" name="info"><?php echo $row->info;?></textarea>
           </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="#">UPDATE</a>
+          <input type="submit" class="btn btn-primary" value="Update"/>
+          <?php echo form_close();?>
         </div>
       </div>
     </div>
   </div>
+  <?php endforeach; endif;?>
 
   <!-- DELETE SLIDER -->
-   <div class="modal fade" id="deleteslider" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <?php if(!empty($get_all)): foreach($get_all as $row): ?>
+   <div class="modal fade" id="deleteslider<?php echo $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -376,8 +383,9 @@
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="#">Yes</a>
+          <a class="btn btn-primary" href="<?php echo base_url();?>Administrator_Controller/delete_slider?id=<?php echo $row->id; ?>">Yes</a>
         </div>
       </div>
     </div>
   </div>
+  <?php endforeach; endif;?>
