@@ -152,5 +152,40 @@ class Administrator_Model extends CI_Model{
             return;
         }
     }
+    public function update_slider($image,$update_id,$title,$info){
+        if(!empty($image)){
+            $update_query = $this->Crud_Model->update_data(
+                array(
+                    'image' => $image,
+                    'title' =>  $title,
+                    'info'  =>  $info
+                ),
+                array(
+                    'id'    =>  $update_id
+                ),
+                "vel_ami_homepagesliders"
+            );
+        }else{
+            $update_query = $this->Crud_Model->update_data(
+                array(
+                    'title' =>  $title,
+                    'info'  =>  $info
+                ),
+                array(
+                    'id'    =>  $update_id
+                ),
+                "vel_ami_homepagesliders"
+            );
+        }
+             if($update_query){
+                return TRUE;
+                }else{
+                return FALSE;
+             }
+    }
+
+    public function delete_slider($id){
+        return $this->Crud_Model->delete_data(['id'=>$id],"vel_ami_homepagesliders");
+    }
   
 }

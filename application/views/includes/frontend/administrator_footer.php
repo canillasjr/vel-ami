@@ -64,3 +64,17 @@
     </script>
     <?php
   } ?>
+
+<?php if($this->session->flashdata('success_slider') != ""){
+    ?>
+    <script type="text/javascript">
+      jQuery.notify({
+              title: "",
+              message: "Success!"
+          },{
+          // settings
+          type: 'success'
+      });
+    </script>
+    <?php
+  } ?>

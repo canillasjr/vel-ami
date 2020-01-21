@@ -34,10 +34,10 @@
                       <td><?php echo $row->title; ?></td>
                        <td><?php echo $row->info;?></td>
                       <td>
-                        <a href="#" class="btn btn-danger btn-circle btn-sm" data-toggle="modal" data-target="#deleteslider">
+                        <a href="#" class="btn btn-danger btn-circle btn-sm" data-toggle="modal" data-target="#deleteslider<?php echo $row->id; ?>">
                           <i class="fas fa-trash"></i>
                         </a>
-                         <a href="#" class="btn btn-warning btn-circle btn-sm" data-toggle="modal" data-target="#editslider">
+                         <a href="#" class="btn btn-warning btn-circle btn-sm" data-toggle="modal" data-target="#editslider<?php echo $row->id; ?>">
                           <i class="fas fa-edit"></i>
                         </a>
                       </td>

@@ -286,9 +286,28 @@ class Administrator_Controller extends CI_Controller {
 	public function upload_slider(){
 		$admin_id = $this->session->userdata('admin_id');
 		$image = do_upload();
-		$title = $this->input->post('title');
-		$info = $this->input->post('info');
-		$this->Administrator_Model->add_upload_slider($admin_id,$image,$title,$info);
+		$data = $this->input->post(NULL, TRUE); //xss_clean
+		$this->Administrator_Model->add_upload_slider($admin_id,$image,$data['title'],$data['info']);
+		$this->session->set_flashdata(array('success_slider' => 'Success!'));
+		redirect(base_url('administrator/sliders'));
+		exit();
+	}
+	public function update_slider(){
+		$image = do_upload();
+		$data = $this->input->post(NULL, TRUE); //xss_clean
+		$this->Administrator_Model->update_slider($image,
+			$data['update_id'],
+			$data['title'],
+			$data['info']
+		);
+		$this->session->set_flashdata(array('success_slider' => 'Success!'));
+		redirect(base_url('administrator/sliders'));
+		exit();
+	}
+	public function delete_slider(){
+		$id = $this->input->get('id');
+		$this->Administrator_Model->delete_slider($id);
+		$this->session->set_flashdata(array('success_slider' => 'Success!'));
 		redirect(base_url('administrator/sliders'));
 		exit();
 	}
